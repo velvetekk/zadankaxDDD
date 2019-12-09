@@ -1,11 +1,15 @@
 def countSigns(index, inputString, counter, sign, changesIndex):
     if index + 1 < inputString.__len__():
+
         if inputString[index + 1] == sign:
             changesIndex[0] += 1
             return countSigns(index + 1, inputString, counter + 1, sign, changesIndex)
+
         else:
+
             if counter == 2 and sign == '.':
                 return inputString
+
             return sliceString(inputString, index - counter, index)
     else:
         return inputString
@@ -20,6 +24,7 @@ def text_analyer(filePath):
             linesList = fileHandler.readlines()
             output = ["\n"]
             changesIndex = [0]
+
             for line in linesList:
                 letterIndex = 0
 
